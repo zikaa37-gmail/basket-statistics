@@ -1,0 +1,96 @@
+<div class="stats">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Igrac</th>
+        <th scope="col">1</th>
+        <th scope="col">Z</th>
+        <th scope="col">2</th>
+        <th scope="col">3</th>
+        <th scope="col">F-</th>
+        <th scope="col">F+</th>
+        <th scope="col">OL</th>
+        <th scope="col">IL</th>
+        <th scope="col">AS</th>
+        <th scope="col">BL</th>
+        <th scope="col">SO</th>
+        <th scope="col">SN</th>
+        <th scope="col">index</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let player of players">
+        <td scope="row">
+          # {{ player.jerseyNumber }} {{ player.firstName }}
+          {{ player.lastName }}
+        </td>
+        <td>
+          {{ player.stats?.freeThrow }} / {{ player.stats?.freeThrowAttempted }}
+        </td>
+        <td>
+          {{ player.stats?.paintShot }} / {{ player.stats?.paintShotAttempted }}
+        </td>
+        <td>
+          {{ player.stats?.twoPointShot }} /
+          {{ player.stats?.twoPointShotAttempted }}
+        </td>
+        <td>
+          {{ player.stats?.threePointShot }} /
+          {{ player.stats?.threePointShotAttempted }}
+        </td>
+        <td>{{ player.stats?.foulCommited }}</td>
+        <td>{{ player.stats?.foulTaken }}</td>
+        <td>{{ player.stats?.steal }}</td>
+        <td>{{ player.stats?.turnover }}</td>
+        <td>{{ player.stats?.assist }}</td>
+        <td>{{ player.stats?.blockedShot }}</td>
+        <td>{{ player.stats?.deffRebound }}</td>
+        <td>{{ player.stats?.offRebound }}</td>
+        <td>{{ player.stats?.index }}</td>
+      </tr>
+      <tr class="fw-bolder">
+        <td>Ukupno</td>
+        <td>
+          {{ this.percentages.ftScored }} /
+          {{ this.percentages.ftAttempted }}
+          <span *ngIf="this.percentages.ftAttempted > 0">
+            ({{ this.percentages.ftPercentage }}%)
+          </span>
+        </td>
+        <td>
+          {{ this.percentages.paintScored }} /
+          {{ this.percentages.paintAttempted }}
+          <span *ngIf="this.percentages.paintAttempted > 0">
+            ({{ this.percentages.paintPercentage }}%)
+          </span>
+        </td>
+        <td>
+          {{ this.percentages.twoPointScored }} /
+          {{ this.percentages.twoPointAttempted }}
+          <span *ngIf="this.percentages.twoPointAttempted > 0">
+            ({{ this.percentages.twoPointPercentage }}%)
+          </span>
+        </td>
+        <td>
+          {{ this.percentages.threePointScored }} /
+          {{ this.percentages.threePointAttempted }}
+          <span *ngIf="this.percentages.threePointAttempted > 0">
+            ({{ this.percentages.threePointPercentage }}%)
+          </span>
+        </td>
+        <td>{{ this.percentages.foulCommited }}</td>
+        <td>{{ this.percentages.foulTaken }}</td>
+        <td>{{ this.percentages.steal }}</td>
+        <td>{{ this.percentages.turnover }}</td>
+        <td>{{ this.percentages.assist }}</td>
+        <td>{{ this.percentages.blockedShot }}</td>
+        <td>{{ this.percentages.deffRebound }}</td>
+        <td>{{ this.percentages.offRebound }}</td>
+        <td>{{ this.percentages.gameIndex }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- percentages:
+  {{ percentages | json }} -->
+</div>

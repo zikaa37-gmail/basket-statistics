@@ -1,0 +1,31 @@
+<!-- <div>
+  <svg width="500" height="500">
+    <circle *ngFor="let pm of pointsMarks" [attr.cx]="pm.cx" [attr.cy]="pm.cy" r="5" stroke="black" stroke-width="1"
+      [attr.fill]="pm.fill" style="z-index: 60;" />
+  </svg>
+</div> -->
+
+<div #field class="field" *ngIf="isSquadSet">
+  <div #threePoint class="three-point cursor-pointer" (click)="onLeftClick($event, '3')"
+    (contextmenu)="onRightClick($event, '3')">
+  </div>
+  <div #twoPoint class="two-point cursor-pointer" (click)="onLeftClick($event, '2')"
+    (contextmenu)="onRightClick($event, '2')">
+  </div>
+  <div #twoPointCircle class="two-point-circle cursor-pointer" (click)="onLeftClick($event, '2p')"
+    (contextmenu)="onRightClick($event, '2p')">
+  </div>
+  <div #paint class="paint cursor-pointer" (click)="onLeftClick($event, 'Z')" (contextmenu)="onRightClick($event, 'Z')">
+  </div>
+  <div #onePoint class="free-throw cursor-pointer" (click)=" onLeftClick($event, '1')"
+    (contextmenu)="onRightClick($event, '1')">
+  </div>
+</div>
+<div #field class="field text-center" *ngIf="!isSquadSet">
+  <div class="mx-auto my-5">
+    <h1>Odaberi igrace</h1>
+  </div>
+</div>
+
+<app-players-popup [currentPlayers]="currentPlayers" [isDisplayed]="displayPopup" [position]="selectedPosition"
+  (eventCancelled)="resetBg()" (selectedPlayer)="setSelectedPlayer($event)"></app-players-popup>

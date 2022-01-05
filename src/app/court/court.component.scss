@@ -1,0 +1,78 @@
+.field {
+  border       : solid 2px black;
+  border-bottom: solid 1px black;
+  border-right : solid 1px black;
+  position     : absolute;
+  left         : 0px;
+  top          : 0px;
+  background   : transparent;
+  width        : 500px;
+  height       : 500px;
+  z-index      : 0;
+}
+
+.free-throw {
+  border    : solid 2px black;
+  position  : absolute;
+  left      : 150px;
+  top       : 150px;
+  width     : 200px;
+  height    : 50px;
+  z-index   : 40;
+  background: transparent; // #ccc;
+}
+
+.paint {
+  position        : absolute;
+  left            : 150px;
+  top             : 0px;
+  width           : 200px;
+  height          : 152px;
+  z-index         : 30;
+  border          : solid 2px black;
+  // border-radius: 0px 0px 60px 60px;
+  background      : white; // ;transparent
+}
+
+.two-point {
+  position     : absolute;
+  left         : 50px;
+  top          : 0px;
+  width        : 400px;
+  height       : 350px;
+  z-index      : 20;
+  border       : solid 2px black;
+  border-radius: 0px 0px 200px 200px;
+  background   : white; //;transparent
+}
+
+.two-point-circle {
+  position     : absolute;
+  left         : 150px;
+  top          : 198px;
+  width        : 200px;
+  height       : 100px;
+  z-index      : 55;
+  border       : solid 2px black;
+  border-radius: 0px 0px 200px 200px;
+  background   : white; //;transparent
+}
+
+.three-point {
+  position  : absolute;
+  left      : 0px;
+  top       : 0px;
+  width     : 500px;
+  height    : 500px;
+  z-index   : 10;
+  background: white; // ;transparent
+}
+
+// #circles {
+//   z-index : 0;
+//   position: absolute;
+//   left    : 0;
+//   top     : 0;
+//   width   : 500px;
+//   height  : 500px;
+// }

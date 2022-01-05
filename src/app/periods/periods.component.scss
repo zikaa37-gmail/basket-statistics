@@ -1,0 +1,43 @@
+.periods-container {
+  border     : solid 1px black;
+  border-left: solid 1px black;
+  position   : absolute;
+  left       : 1000px;
+  top        : 0px;
+  background : white;
+  width      : 200px;
+  height     : 630px;
+  text-align : center;
+  margin     : 0;
+  padding    : 0;
+  z-index    : 0;
+}
+
+.btn-lg {
+  width        : 80px;
+  height       : 50px;
+  border       : solid 2px black;
+  border-radius: 10px;
+  margin       : 10px 0px;
+}
+
+ul {
+  padding-left: 0rem !important;
+}
+
+.stat-action-option {
+  // width      : 150px;
+  display    : block;
+  font-weight: bold;
+  text-align : center;
+  margin     : 5px;
+  padding    : 2px 5px;
+}
+
+.periods-stat {
+  position  : absolute;
+  bottom    : 0;
+  border-top: solid 1px black;
+  height    : 130px;
+  width     : 100%;
+}
