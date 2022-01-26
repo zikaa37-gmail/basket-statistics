@@ -1,17 +1,34 @@
-<div class="popup-container" *ngIf="isDisplayed" #menu>
+<div
+  class="popup-container"
+  *ngIf="isDisplayed"
+  #menu
+>
   <div class="popup">
-  <ul class="list-group">
-    <li *ngFor="let cp of currentPlayers" class="list-group-item list-group-item-action cursor-pointer"
-      (click)="emitValue(cp)" (contextmenu)="$event.preventDefault()">
-      {{cp.nickname}}
-    </li>
-    <li (click)="cancelEvent('left', $event)" (contextmenu)="cancelEvent('right', $event)"
-      class="list-group-item list-group-item-action cursor-pointer bg-danger">OTKAZI</li>
-  </ul>
-</div>
-<div class="popup-image ">
-  <img src="assets/{{position}}.png" class="img">
-</div>
+    <ul class="list-group">
+      <li
+        *ngFor="let cp of currentPlayers"
+        class="list-group-item list-group-item-action cursor-pointer"
+        (click)="emitValue(cp)"
+        (contextmenu)="$event.preventDefault()"
+      >
+        {{cp.nickname}}
+      </li>
+      <li
+        (click)="cancelEvent('left', $event)"
+        (contextmenu)="cancelEvent('right', $event)"
+        class="list-group-item list-group-item-action cursor-pointer bg-danger"
+      >OTKAZI</li>
+    </ul>
+  </div>
+  <div class="popup-image ">
+    <img
+      src="assets/img/{{position}}.png"
+      class="img"
+    >
+  </div>
 </div>
 
-<div class="backdrop" *ngIf="isDisplayed"></div>
+<div
+  class="backdrop"
+  *ngIf="isDisplayed"
+></div>

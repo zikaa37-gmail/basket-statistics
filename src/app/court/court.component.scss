@@ -1,3 +1,5 @@
+@import '../../variables.scss';
+
 .field {
   border       : solid 2px black;
   border-bottom: solid 1px black;
@@ -76,3 +78,27 @@
 //   width   : 500px;
 //   height  : 500px;
 // }
+
+.top {
+  z-index: 999;
+}
+
+.bg-orange {
+  background: $orange !important;
+}
+
+.bg-yellow {
+  background: $yellow !important;
+}
+
+.bg-light-blue {
+  background: $light-blue !important;
+}
+
+.bg-light-green {
+  background: $light-green !important;
+}
+
+.bg-rose {
+  background: $rose !important;
+}

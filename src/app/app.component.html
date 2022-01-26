@@ -1,20 +1,43 @@
-<app-court [isSquadSet]="isSquadSet" [currentPlayers]="currentPlayers" (courtAction)="saveCourtAction($event)">
+<app-court
+  [isSquadSet]="isSquadSet"
+  [currentPlayers]="currentPlayers"
+  (courtAction)="saveCourtAction($event)"
+>
 </app-court>
 
 <div *ngFor="let pm of pointMarks">
-  <svg width="20" height="20" [ngStyle]="{'position': 'absolute', 'left': pm.cx, 'top': pm.cy, 'cursor': 'crosshair'}"
-    (click)="removeCircle(pm)">
-    <circle [attr.cx]="10" [attr.cy]="10" r="5" stroke="black" stroke-width="1" [attr.fill]="pm.fill" title="sdsads"
-      style="z-index: 60;" />
+  <svg
+    width="15"
+    height="15"
+    [ngStyle]="{'position': 'absolute', 'left': pm.cx, 'top': pm.cy, 'cursor': 'crosshair'}"
+    (click)="removeCircle(pm)"
+  >
+    <circle
+      [attr.cx]="6"
+      [attr.cy]="6"
+      r="5"
+      stroke="black"
+      stroke-width="1"
+      [attr.fill]="pm.fill"
+      title="sdsads"
+      style="z-index: 60;"
+    />
   </svg>
 </div>
 
 <div class="stat-field players-container">
   <!-- <div *ngif="currentPlayers?.length > 0">current Players</div> -->
   <ul class="d-flex flex-wrap">
-    <li class="d-inline" *ngFor="let player of currentPlayers">
-      <button class="btn m-1 player-btn" [ngClass]="getPlayerButtonColor(player)"
-        (click)="togglePlayerSelection(player)" (contextmenu)="togglePlayerSelection(player, $event)">
+    <li
+      class="d-inline"
+      *ngFor="let player of currentPlayers"
+    >
+      <button
+        class="btn m-1 player-btn"
+        [ngClass]="getPlayerButtonColor(player)"
+        (click)="togglePlayerSelection(player)"
+        (contextmenu)="togglePlayerSelection(player, $event)"
+      >
         #{{ player.jerseyNumber }} {{ player.nickname }}
       </button>
     </li>
@@ -22,10 +45,17 @@
 
   <!-- <div *ngif="notSelectedPlayers?.length > 0">not Selected Players </div> -->
   <ul class="d-flex flex-wrap">
-    <li class="d-inline" *ngFor="let player of notSelectedPlayers">
-      <button class="btn m-1 player-btn" [ngClass]="getPlayerButtonColor(player)"
-        [disabled]="isSquadSet && !player.selected" (click)="togglePlayerSelection(player)"
-        (contextmenu)="deactivatePlayer(player, $event)">
+    <li
+      class="d-inline"
+      *ngFor="let player of notSelectedPlayers"
+    >
+      <button
+        class="btn m-1 player-btn"
+        [ngClass]="getPlayerButtonColor(player)"
+        [disabled]="isSquadSet && !player.selected"
+        (click)="togglePlayerSelection(player)"
+        (contextmenu)="deactivatePlayer(player, $event)"
+      >
         #{{ player.jerseyNumber }} {{ player.nickname }}
       </button>
     </li>
@@ -33,21 +63,41 @@
 
   <!-- <div *ngif="notScheduledPlayers?.length > 0">not Scheduled Players </div> -->
   <ul class="d-flex flex-wrap">
-    <li class="d-inline" *ngFor="let player of notScheduledPlayers">
-      <button class="btn m-1 player-btn" [ngClass]="getPlayerButtonColor(player)"
-        [disabled]="isTeamSet && player.selected === null" (click)="activatePlayer(player)"
-        (contextmenu)="deactivatePlayer(player, $event)">
+    <li
+      class="d-inline"
+      *ngFor="let player of notScheduledPlayers"
+    >
+      <button
+        class="btn m-1 player-btn"
+        [ngClass]="getPlayerButtonColor(player)"
+        [disabled]="isTeamSet && player.selected === null"
+        (click)="activatePlayer(player)"
+        (contextmenu)="deactivatePlayer(player, $event)"
+      >
         #{{ player.jerseyNumber }} {{ player.nickname }}
       </button>
     </li>
   </ul>
 </div>
 
-<app-periods (savePeriod)="savePeriodStats($event)" (visitorPoints)="addPointsToTeamB($event)" [isSquadSet]="isSquadSet"
-  [home]="home" [visitor]="visitor" [gameResult]="gameResult">
+<app-periods
+  (savePeriod)="savePeriodStats($event)"
+  (visitorPoints)="addPointsToTeamB($event)"
+  [isSquadSet]="isSquadSet"
+  [home]="home"
+  [visitor]="visitor"
+  [gameResult]="gameResult"
+>
 </app-periods>
 
-<app-stat-actions [currentPlayers]="currentPlayers" [isSquadSet]="isSquadSet" (statAction)="saveStatAction($event)"
-  (closePopup)="closePopup = true"></app-stat-actions>
+<app-stat-actions
+  [currentPlayers]="currentPlayers"
+  [isSquadSet]="isSquadSet"
+  (statAction)="saveStatAction($event)"
+  (closePopup)="closePopup = true"
+></app-stat-actions>
 
-<app-stats [players]="scheduledPlayers" *ngIf="scheduledPlayers?.length"></app-stats>
+<app-stats
+  [players]="scheduledPlayers"
+  *ngIf="scheduledPlayers?.length"
+></app-stats>
