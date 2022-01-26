@@ -1,5 +1,6 @@
 import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { CourtAction, Player } from '../shared/models/shared.model';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-court',
@@ -18,8 +19,15 @@ export class CourtComponent {
   selectedPosition!: string;
   displayPopup = false;
   action!: CourtAction;
+  langs: string[];
 
-  constructor() { }
+  constructor(
+    public translate: TranslateService
+  ) {
+    translate.addLangs(['en', 'sr']);
+    translate.setDefaultLang('sr');
+    this.langs = ['en', 'sr'];
+  }
 
   onLeftClick(event: any, position: '1' | 'Z' | '2' | '2p' | '3') {
     this.prepareAction(event, position, true);
@@ -46,41 +54,19 @@ export class CourtComponent {
   markShootingArea() {
     switch (this.selectedPosition) {
       case '1':
-        this.onePoint.nativeElement.classList.add('bg-primary');
+        this.onePoint.nativeElement.classList.toggle('bg-orange');
         break;
       case 'Z':
-        this.paint.nativeElement.classList.add('bg-primary');
+        this.paint.nativeElement.classList.toggle('bg-yellow');
         break;
       case '2p':
-        this.twoPointCircle.nativeElement.classList.add('bg-primary');
+        this.twoPointCircle.nativeElement.classList.toggle('bg-rose');
         break;
       case '2':
-        this.twoPoint.nativeElement.classList.add('bg-primary');
+        this.twoPoint.nativeElement.classList.toggle('bg-light-green');
         break;
       case '3':
-        this.threePoint.nativeElement.classList.add('bg-primary');
-        break;
-      default:
-        break;
-    }
-  }
-
-  unmarkShootingArea() {
-    switch (this.selectedPosition) {
-      case '1':
-        this.onePoint.nativeElement.classList.remove('bg-primary');
-        break;
-      case 'Z':
-        this.paint.nativeElement.classList.remove('bg-primary');
-        break;
-      case '2':
-        this.twoPoint.nativeElement.classList.remove('bg-primary');
-        break;
-      case '2p':
-        this.twoPointCircle.nativeElement.classList.remove('bg-primary');
-        break;
-      case '3':
-        this.threePoint.nativeElement.classList.remove('bg-primary');
+        this.threePoint.nativeElement.classList.toggle('bg-light-blue');
         break;
       default:
         break;
@@ -89,7 +75,7 @@ export class CourtComponent {
 
   setSelectedPlayer(player: Player) {
     this.action!.player = player;
-    console.log(this.action);
+    // console.log(this.action);
     this.emitValue();
   }
 
@@ -101,9 +87,13 @@ export class CourtComponent {
   }
 
   resetBg() {
-    this.unmarkShootingArea();
+    this.markShootingArea();
     this.displayPopup = false;
     this.selectedPosition = '';
+  }
+
+  switchLang(lang: string) {
+    this.translate.use(lang);
   }
 }
 

@@ -1,4 +1,3 @@
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AppService } from './app.service';
 import { Period } from './periods/periods.component';
@@ -47,7 +46,7 @@ export class AppComponent implements OnInit {
         new QuarterStat(4),
       ]
     };
-    console.log((this.gameResult));
+    // console.log((this.gameResult));
   }
 
   resetTeamScoredCounter() {
