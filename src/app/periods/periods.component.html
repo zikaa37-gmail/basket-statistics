@@ -1,16 +1,27 @@
 <div class="periods-container">
-  <!--  d-flex flex-row-->
   <div>
     <ul>
       <li
         class=""
         *ngFor="let p of periods"
       >
-        <button
-          class="btn btn-lg"
-          [ngClass]="p.selected ? 'btn-dark-green' : 'btn-light'"
-          (click)="setSelectedPeriod(p)"
-        >{{p.displayName}}</button>
+        <div class="period-wrapper">
+          <div
+            class="bonus cursor-pointer"
+            (click)="toggleBonus(p, 'host')"
+            [ngStyle]="{'background-color':p.hostBonus ? 'red': 'white'}"
+          ></div>
+          <button
+            class="btn btn-lg"
+            [ngClass]="p.selected ? 'btn-dark-green' : 'btn-light'"
+            (click)="setSelectedPeriod(p)"
+          >{{p.displayName}}</button>
+          <div
+            class="bonus cursor-pointer"
+            (click)="toggleBonus(p, 'visitor')"
+            [ngStyle]="{'background-color':p.visitorBonus ? 'red': 'white'}"
+          ></div>
+        </div>
       </li>
     </ul>
   </div>

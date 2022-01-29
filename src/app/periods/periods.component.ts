@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { GameResult } from '../shared/models/game.model';
+import { PeriodsService } from './periods.service';
 // import { StatAction } from '../stat-actions/stat-actions.component';
 // import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 @Component({
@@ -14,23 +15,14 @@ export class PeriodsComponent implements OnInit {
   @Input() gameResult!: GameResult;
   @Output() savePeriod = new EventEmitter<Period>();
   @Output() visitorPoints = new EventEmitter<number>();
-  periods: Period[] = [
-    { name: 1, displayName: 'I', selected: true },
-    { name: 2, displayName: 'II', selected: false },
-    { name: 3, displayName: 'III', selected: false },
-    { name: 4, displayName: 'IV', selected: false },
-    // { name: 5, displayName: 'Kraj', selected: false },
-  ];
-  selectedPeriod!: Period; // = this.periods[0];
-  // interval: any = 1000; // 1 second, 1000ms
-  estimatedTime!: number; // 10 minutes
+  periods: Period[] = this.periodsService.getPeriods();
+  selectedPeriod!: Period;
+  estimatedTime!: number;
   minutes!: number;
   seconds!: number;
-  s: any;
   timerPaused = false;
-  // faCoffee = faCoffee;
 
-  constructor() { }
+  constructor(private periodsService: PeriodsService) { }
 
   ngOnInit(): void {
     this.setSelectedPeriod(this.periods[0]);
@@ -55,7 +47,7 @@ export class PeriodsComponent implements OnInit {
   }
 
   startTimer() {
-    this.s = setInterval(() => {
+    const s = setInterval(() => {
       if (!this.timerPaused) {
         this.estimatedTime--;
         if (this.minutes === 0 && this.seconds === 0) {
@@ -84,10 +76,21 @@ export class PeriodsComponent implements OnInit {
     this.minutes = 10;
     this.seconds = 0;
   }
+
+  toggleBonus(period: Period, side: string) {
+    const p = this.periods.find((p: Period) => p.displayName.toLowerCase() === period.displayName.toLowerCase())!;
+    if (side === 'host') {
+      p.hostBonus = !p?.hostBonus;
+    } else {
+      p.visitorBonus = !p.visitorBonus;
+    }
+  }
 }
 
 export interface Period {
   name: number;
   displayName: string
   selected: boolean;
+  hostBonus: boolean;
+  visitorBonus: boolean;
 }
