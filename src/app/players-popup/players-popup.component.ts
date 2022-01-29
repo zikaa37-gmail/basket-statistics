@@ -33,6 +33,7 @@ export class PlayersPopupComponent implements OnChanges {
     if (side === 'right') {
       event.preventDefault();
     }
+
     this.isDisplayed = false;
     this.eventCancelled.emit(true);
     this.toastr.success('Hello world!', 'Toastr fun!');

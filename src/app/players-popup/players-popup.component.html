@@ -16,16 +16,16 @@
       <li
         (click)="cancelEvent('left', $event)"
         (contextmenu)="cancelEvent('right', $event)"
-        class="list-group-item list-group-item-action cursor-pointer bg-danger"
-      >OTKAZI</li>
+        class="list-group-item list-group-item-action cursor-pointer bg-danger text-center text-white"
+      >{{'cancel' | translate | uppercase}}</li>
     </ul>
   </div>
-  <div class="popup-image ">
+  <!-- <div class="popup-image ">
     <img
       src="assets/img/{{position}}.png"
       class="img"
     >
-  </div>
+  </div> -->
 </div>
 
 <div

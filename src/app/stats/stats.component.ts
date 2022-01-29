@@ -37,6 +37,20 @@ export class StatsComponent implements OnChanges {
       this.percentages.threePointAttempted += player.stats.threePointShotAttempted;
       this.percentages.threePointScored += player.stats.threePointShot;
       this.percentages.threePointPercentage = Math.floor(this.percentages.threePointScored / this.percentages.threePointAttempted * 100);
+      // debugger
+      this.percentages.totalPointsAttempted =
+        this.percentages.ftAttempted +
+        this.percentages.paintAttempted +
+        this.percentages.twoPointAttempted +
+        this.percentages.threePointAttempted;
+      this.percentages.totalPointsScored =
+        this.percentages.ftScored +
+        this.percentages.paintScored +
+        this.percentages.twoPointScored +
+        this.percentages.threePointScored;
+
+      this.percentages.totalPointsPercentage =
+        Math.floor(this.percentages.totalPointsScored / this.percentages.totalPointsAttempted * 100);
 
       this.percentages.foulCommited += player.stats.foulCommited;
       this.percentages.foulTaken += player.stats.foulTaken;
@@ -86,6 +100,9 @@ export class Percentages {
   threePointAttempted = 0;
   threePointScored = 0;
   threePointPercentage = 0;
+  totalPointsScored = 0;
+  totalPointsAttempted = 0;
+  totalPointsPercentage = 0;
   foulCommited = 0;
   foulTaken = 0
   steal = 0;

@@ -38,7 +38,7 @@
         (click)="togglePlayerSelection(player)"
         (contextmenu)="togglePlayerSelection(player, $event)"
       >
-        #{{ player.jerseyNumber }} {{ player.nickname }}
+        {{ player.jerseyNumber }} {{ player.nickname }}
       </button>
     </li>
   </ul>
@@ -56,7 +56,7 @@
         (click)="togglePlayerSelection(player)"
         (contextmenu)="deactivatePlayer(player, $event)"
       >
-        #{{ player.jerseyNumber }} {{ player.nickname }}
+        {{ player.jerseyNumber }} {{ player.nickname }}
       </button>
     </li>
   </ul>
@@ -74,7 +74,7 @@
         (click)="activatePlayer(player)"
         (contextmenu)="deactivatePlayer(player, $event)"
       >
-        #{{ player.jerseyNumber }} {{ player.nickname }}
+        {{ player.jerseyNumber }} {{ player.nickname }}
       </button>
     </li>
   </ul>

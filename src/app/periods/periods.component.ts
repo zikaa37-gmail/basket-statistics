@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { GameResult } from '../shared/models/game.model';
-import { StatAction } from '../stat-actions/stat-actions.component';
-
+// import { StatAction } from '../stat-actions/stat-actions.component';
+// import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-periods',
   templateUrl: './periods.component.html',
@@ -22,11 +22,19 @@ export class PeriodsComponent implements OnInit {
     // { name: 5, displayName: 'Kraj', selected: false },
   ];
   selectedPeriod!: Period; // = this.periods[0];
+  // interval: any = 1000; // 1 second, 1000ms
+  estimatedTime!: number; // 10 minutes
+  minutes!: number;
+  seconds!: number;
+  s: any;
+  timerPaused = false;
+  // faCoffee = faCoffee;
 
   constructor() { }
 
   ngOnInit(): void {
     this.setSelectedPeriod(this.periods[0]);
+    this.resetCounter();
   }
 
   setSelectedPeriod(period: Period) {
@@ -35,6 +43,7 @@ export class PeriodsComponent implements OnInit {
       p.selected = !!(period.name === p.name);
     });
     this.emitPeriod();
+    this.estimatedTime = 600; // 10 minutes
   }
 
   emitPeriod() {
@@ -43,6 +52,37 @@ export class PeriodsComponent implements OnInit {
 
   emitVisitorPoints(value: number) {
     this.visitorPoints.emit(value);
+  }
+
+  startTimer() {
+    this.s = setInterval(() => {
+      if (!this.timerPaused) {
+        this.estimatedTime--;
+        if (this.minutes === 0 && this.seconds === 0) {
+          this.togglePauseTimer();
+          this.resetCounter();
+        }
+        if (this.seconds === 0) {
+          this.minutes--;
+          this.seconds = 59;
+        }
+        this.seconds = (this.estimatedTime - (this.minutes * 60));
+      }
+    }, 1000);
+  }
+
+  resumeTimer() {
+    this.timerPaused = false;
+  }
+
+  togglePauseTimer() {
+    this.timerPaused = !this.timerPaused;
+  }
+
+  resetCounter() {
+    this.estimatedTime = 60 * 10; // 10 minutes
+    this.minutes = 10;
+    this.seconds = 0;
   }
 }
 
