@@ -19,7 +19,7 @@ export class StatActionsComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges & { isSquadSet: SimpleChange }): void {
     if (changes.isSquadSet) {
       this.isSquadSet = changes.isSquadSet.currentValue;
-      console.log(this.isSquadSet);
+      // console.log(this.isSquadSet);
     }
   }
 
@@ -36,7 +36,7 @@ export class StatActionsComponent implements OnChanges {
       this.displayPopup = false;
     }
     this.action!.player! = player!;
-    console.log(this.action);
+    // console.log(this.action);
     this.emitValue();
   }
 

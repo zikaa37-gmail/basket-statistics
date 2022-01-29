@@ -2,9 +2,15 @@
   <!--  d-flex flex-row-->
   <div>
     <ul>
-      <li class="" *ngFor="let p of periods">
-        <button class="btn btn-lg" [ngClass]="p.selected ? 'btn-success' : 'btn-light'"
-          (click)="setSelectedPeriod(p)">{{p.displayName}}</button>
+      <li
+        class=""
+        *ngFor="let p of periods"
+      >
+        <button
+          class="btn btn-lg"
+          [ngClass]="p.selected ? 'btn-dark-green' : 'btn-light'"
+          (click)="setSelectedPeriod(p)"
+        >{{p.displayName}}</button>
       </li>
     </ul>
   </div>
@@ -14,41 +20,94 @@
     </span>
   </p>
 
+  <div class="flex flex-column">
+    <button
+      class="small-btn btn-green"
+      (click)="startTimer()"
+    >
+      <i class="fa fa-play"></i>
+      <!-- <i class="material-icons">visibility</i> -->
+    </button>
+    <button
+      class="small-btn btn-red"
+      (click)="togglePauseTimer()"
+    >
+      <i
+        class="fa fa-pause"
+        *ngIf="!timerPaused"
+      ></i>
+      <i
+        class="fa fa-random"
+        *ngIf="timerPaused"
+      ></i>
+    </button>
+    <button
+      class="small-btn btn-blue"
+      (click)="resetCounter()"
+    ><i class="fa fa-refresh"></i></button>
+  </div>
+  <div class="timer">
+    <b> {{minutes | number:'2.0'}} : {{seconds | number:'2.0'}}</b>
+  </div>
 
 
   <div class="periods-stat d-flex flex-row justify-content-start align-items-start">
     <div class="stat-action-option">
       <div class="d-block">1</div>
       <div class="d-block">
-        <button class="btn btn-primary" (click)="emitVisitorPoints(1)" (contextmenu)="$event.preventDefault()"
-          [disabled]="!isSquadSet">+</button>
+        <button
+          class="btn btn-blue"
+          (click)="emitVisitorPoints(1)"
+          (contextmenu)="$event.preventDefault()"
+          [disabled]="!isSquadSet"
+        >+</button>
       </div>
       <div class="d-block">
-        <button class="btn btn-secondary mt-2 px-3" (click)="emitVisitorPoints(-1)"
-          (contextmenu)="$event.preventDefault()" [disabled]="!isSquadSet">-</button>
+        <button
+          class="btn btn-grey mt-2 px-3"
+          (click)="emitVisitorPoints(-1)"
+          (contextmenu)="$event.preventDefault()"
+          [disabled]="!isSquadSet"
+        >-</button>
       </div>
     </div>
 
     <div class="stat-action-option">
       <div class="d-block">2</div>
       <div class="d-block">
-        <button class="btn btn-primary" (click)="emitVisitorPoints(2)" (contextmenu)="$event.preventDefault()"
-          [disabled]="!isSquadSet">+</button>
+        <button
+          class="btn btn-blue"
+          (click)="emitVisitorPoints(2)"
+          (contextmenu)="$event.preventDefault()"
+          [disabled]="!isSquadSet"
+        >+</button>
       </div>
       <div class="d-block">
-        <button class="btn btn-secondary mt-2 px-3" (click)="emitVisitorPoints(-2)"
-          (contextmenu)="$event.preventDefault()" [disabled]="!isSquadSet">-</button>
+        <button
+          class="btn btn-grey mt-2 px-3"
+          (click)="emitVisitorPoints(-2)"
+          (contextmenu)="$event.preventDefault()"
+          [disabled]="!isSquadSet"
+        >-</button>
       </div>
     </div>
     <div class="stat-action-option">
       <div class="d-block">3</div>
       <div class="d-block">
-        <button class="btn btn-primary" (click)="emitVisitorPoints(3)" (contextmenu)="$event.preventDefault()"
-          [disabled]="!isSquadSet">+</button>
+        <button
+          class="btn btn-blue"
+          (click)="emitVisitorPoints(3)"
+          (contextmenu)="$event.preventDefault()"
+          [disabled]="!isSquadSet"
+        >+</button>
       </div>
       <div class="d-block">
-        <button class="btn btn-secondary mt-2 px-3" (click)="emitVisitorPoints(-3)"
-          (contextmenu)="$event.preventDefault()" [disabled]="!isSquadSet">-</button>
+        <button
+          class="btn btn-grey mt-2 px-3"
+          (click)="emitVisitorPoints(-3)"
+          (contextmenu)="$event.preventDefault()"
+          [disabled]="!isSquadSet"
+        >-</button>
       </div>
     </div>
   </div>

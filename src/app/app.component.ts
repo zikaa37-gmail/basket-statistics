@@ -337,18 +337,18 @@ export class AppComponent implements OnInit {
 
   savePeriodStats(period: Period) {
     this.curentPeriod = period;
-    console.log('save ' + period.name + ' period');
+    // console.log('save ' + period.name + ' period');
   }
 
   getPlayerButtonColor(player: Player): string {
     if (player.selected === null) {
-      return 'btn-secondary';
+      return 'btn-grey';
     }
-    return player.selected ? 'btn-success' : 'btn-danger';
+    return player.selected ? 'btn-green' : 'btn-red';
   }
 
   getFillColor(scored: boolean): string {
-    return scored ? 'green' : 'red';
+    return scored ? 'lightcoral' : 'lightgrey';
   }
 
   removeCircle(pm: PointMarks) {

@@ -1,0 +1,48 @@
+@import './variables.scss';
+
+.bg-orange {
+  background: $orange !important;
+}
+
+.bg-yellow {
+  background: $yellow !important;
+}
+
+.bg-light-blue {
+  background: $light-blue !important;
+}
+
+.bg-light-green {
+  background: $light-green !important;
+}
+
+.bg-rose {
+  background: $rose !important;
+}
+
+/* BUTTONS */
+
+.btn-grey {
+  background: $grey !important;
+  color     : $white !important;
+}
+
+.btn-blue {
+  background: $blue !important;
+  color     : $white !important;
+}
+
+.btn-green {
+  background: $green !important;
+  color     : $white !important;
+}
+
+.btn-dark-green {
+  background: $dark-green !important;
+  color     : $white !important;
+}
+
+.btn-red {
+  background: $red !important;
+  color     : $white !important;
+}

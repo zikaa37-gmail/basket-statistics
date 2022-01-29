@@ -20,6 +20,8 @@ export class CourtComponent {
   displayPopup = false;
   action!: CourtAction;
   langs: string[];
+  xPosition = 0;
+  yPosition = 0;
 
   constructor(
     public translate: TranslateService
@@ -40,7 +42,7 @@ export class CourtComponent {
 
   prepareAction(event: any, position: '1' | 'Z' | '2' | '2p' | '3', scored: boolean) {
     this.selectedPosition = position;
-    console.log(event);
+    // console.log(event);
     this.markShootingArea();
     this.action = {
       position: position,
@@ -48,6 +50,10 @@ export class CourtComponent {
       xPosition: event.clientX,
       yPosition: event.clientY
     }
+    this.xPosition = event.clientX;// + 'px';
+    this.yPosition = event.clientY;// + 'px';
+    // console.log('x:', this.xPosition);
+    // console.log('y:', this.yPosition);
     this.displayPopup = true;
   }
 

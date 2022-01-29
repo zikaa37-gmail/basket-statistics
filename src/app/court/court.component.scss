@@ -1,9 +1,9 @@
 @import '../../variables.scss';
 
 .field {
-  border       : solid 2px black;
-  border-bottom: solid 1px black;
-  border-right : solid 1px black;
+  border       : solid 2px $black;
+  border-bottom: solid 1px $black;
+  border-right : solid 1px $black;
   position     : absolute;
   left         : 0px;
   top          : 0px;
@@ -14,7 +14,7 @@
 }
 
 .free-throw {
-  border    : solid 2px black;
+  border    : solid 2px $black;
   position  : absolute;
   left      : 150px;
   top       : 150px;
@@ -31,9 +31,9 @@
   width           : 200px;
   height          : 152px;
   z-index         : 30;
-  border          : solid 2px black;
+  border          : solid 2px $black;
   // border-radius: 0px 0px 60px 60px;
-  background      : white; // ;transparent
+  background      : $white; // ;transparent
 }
 
 .two-point {
@@ -43,9 +43,9 @@
   width        : 400px;
   height       : 350px;
   z-index      : 20;
-  border       : solid 2px black;
+  border       : solid 2px $black;
   border-radius: 0px 0px 200px 200px;
-  background   : white; //;transparent
+  background   : $white; //;transparent
 }
 
 .two-point-circle {
@@ -55,9 +55,9 @@
   width        : 200px;
   height       : 100px;
   z-index      : 55;
-  border       : solid 2px black;
+  border       : solid 2px $black;
   border-radius: 0px 0px 200px 200px;
-  background   : white; //;transparent
+  background   : $white; //;transparent
 }
 
 .three-point {
@@ -67,38 +67,5 @@
   width     : 500px;
   height    : 500px;
   z-index   : 10;
-  background: white; // ;transparent
-}
-
-// #circles {
-//   z-index : 0;
-//   position: absolute;
-//   left    : 0;
-//   top     : 0;
-//   width   : 500px;
-//   height  : 500px;
-// }
-
-.top {
-  z-index: 999;
-}
-
-.bg-orange {
-  background: $orange !important;
-}
-
-.bg-yellow {
-  background: $yellow !important;
-}
-
-.bg-light-blue {
-  background: $light-blue !important;
-}
-
-.bg-light-green {
-  background: $light-green !important;
-}
-
-.bg-rose {
-  background: $rose !important;
+  background: $white;
 }

@@ -1,42 +1,59 @@
-.popup-container{
-  width: 500px;
+@import '../../variables.scss';
+
+// :root {
+//   --xPosition: 0px;
+//   --yPosition: 0px;
+// }
+
+.popup-container {
+  width   : 500px;
   position: absolute;
-  left: 150px;
-  top: 200px;
-  z-index: 50;
+  left    : 150px; //var(--xPosition);
+  top     : 200px; // var(--yPosition);
+  z-index : 50;
 }
 
-.popup{
-  width: 200px;
-  position: absolute;
-  left: 150px;
-  top: 200px;
-  z-index: 50;
-  background: #000;
+.popup {
+  width     : 200px;
+  position  : absolute; // relative;
+  left      : 150px; //var(--xPosition);
+  top       : 200px; // var(--yPosition);
+  z-index   : 50;
+  background: $black;
 }
 
-.popup-image{
-  width: 300px;
-  position: absolute;
-  left: 350px;
-  top: 200px;
-  z-index: 50;
+.mover {
+  width     : 50px;
+  height    : 50px;
+  background: red;
+  position  : absolute;
+  left      : var(--xPosition);
+  top       : var(--yPosition);
 }
 
-.img{
-  width: 300px;
-  height: 245px;
-  padding: 0px;
-  margin: 0px;
-  border: solid 1px black;
-    border-radius: 5px;
+.popup-image {
+  width   : 300px;
+  position: absolute;
+  left    : 350px;
+  top     : 200px;
+  z-index : 50;
 }
-.backdrop{
+
+.img {
+  width        : 300px;
+  height       : 245px;
+  padding      : 0px;
+  margin       : 0px;
+  border       : solid 1px black;
+  border-radius: 5px;
+}
+
+.backdrop {
   background-color: rgba($color: #000000, $alpha: 0.5);
-  width: 100%; // 500px;
-  height: 100%; // 400px;
-  z-index: 45;
-  position: absolute;
-  left: 0px;
-  top: 0px;
+  width           : 100%; // 500px;
+  height          : 100%; // 400px;
+  z-index         : 45;
+  position        : absolute;
+  left            : 0px;
+  top             : 0px;
 }

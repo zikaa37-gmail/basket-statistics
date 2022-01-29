@@ -4,12 +4,14 @@ export interface CourtAction {
   scored: boolean;
   xPosition: number;
   yPosition: number;
+  time?: string;
 }
 
 export interface PointMarks {
   cx: number;
   cy: number;
   fill: string;
+  time?: string;
 }
 
 
@@ -32,6 +34,9 @@ export class Stats {
   twoPointShotAttempted = 0;
   threePointShot = 0;
   threePointShotAttempted = 0;
+  totalPointsScored = 0;
+  totalPointsAttempted = 0;
+  totalPointsPercentage = 0;
   assist = 0;
   foulCommited = 0;
   foulTaken = 0;

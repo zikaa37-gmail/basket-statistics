@@ -12,7 +12,8 @@ import { PeriodsComponent } from './periods/periods.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-
+// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,13 +29,15 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
     ToastrModule.forRoot(),
     HttpClientModule,
     TranslateModule.forRoot({
-      defaultLanguage: 'rs',
+      defaultLanguage: 'sr',
       loader: {
         provide: TranslateLoader,
         useFactory: httpTranslateLoader,
         deps: [HttpClient]
       }
-    })
+    }),
+    MatIconModule
+    // FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
