@@ -1,3 +1,5 @@
+@import '../../variables.scss';
+
 .periods-container {
   border     : solid 1px black;
   border-left: solid 1px black;
@@ -52,4 +54,18 @@ ul {
 .timer {
   font-size  : 24px;
   font-weight: bold;
+}
+
+.bonus {
+  width        : 30px;
+  height       : 30px;
+  border       : solid 1px $black;
+  border-radius: 5px;
+  margin       : 20px 8px;
+}
+
+.period-wrapper {
+  display        : flex !important;
+  justify-content: center;
+  align-content  : flex-end;
 }
