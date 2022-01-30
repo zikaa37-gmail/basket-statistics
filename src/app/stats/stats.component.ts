@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
-import { Player } from '../shared/models/shared.model';
+import { Percentages, Player } from '../shared/models/shared.model';
 
 @Component({
   selector: 'app-stats',
@@ -38,19 +38,20 @@ export class StatsComponent implements OnChanges {
       this.percentages.threePointScored += player.stats.threePointShot;
       this.percentages.threePointPercentage = Math.floor(this.percentages.threePointScored / this.percentages.threePointAttempted * 100);
       // debugger
-      this.percentages.totalPointsAttempted =
-        this.percentages.ftAttempted +
-        this.percentages.paintAttempted +
-        this.percentages.twoPointAttempted +
-        this.percentages.threePointAttempted;
-      this.percentages.totalPointsScored =
+      // this.percentages.totalPointsAttempted +=
+      //   this.percentages.ftAttempted +
+      //   this.percentages.paintAttempted +
+      //   this.percentages.twoPointAttempted +
+      //   this.percentages.threePointAttempted;
+
+      this.percentages.totalPointsScored +=
         this.percentages.ftScored +
         this.percentages.paintScored +
         this.percentages.twoPointScored +
         this.percentages.threePointScored;
 
-      this.percentages.totalPointsPercentage =
-        Math.floor(this.percentages.totalPointsScored / this.percentages.totalPointsAttempted * 100);
+      // this.percentages.totalPointsPercentage +=
+      //   Math.floor(this.percentages.totalPointsScored / this.percentages.totalPointsAttempted * 100);
 
       this.percentages.foulCommited += player.stats.foulCommited;
       this.percentages.foulTaken += player.stats.foulTaken;
@@ -87,29 +88,3 @@ export class StatsComponent implements OnChanges {
   }
 }
 
-export class Percentages {
-  ftAttempted = 0;
-  ftScored = 0;
-  ftPercentage = 0;
-  paintAttempted = 0;
-  paintScored = 0;
-  paintPercentage = 0;
-  twoPointAttempted = 0;
-  twoPointScored = 0;
-  twoPointPercentage = 0;
-  threePointAttempted = 0;
-  threePointScored = 0;
-  threePointPercentage = 0;
-  totalPointsScored = 0;
-  totalPointsAttempted = 0;
-  totalPointsPercentage = 0;
-  foulCommited = 0;
-  foulTaken = 0
-  steal = 0;
-  turnover = 0;
-  assist = 0;
-  blockedShot = 0;
-  deffRebound = 0;
-  offRebound = 0;
-  gameIndex = 0;
-}

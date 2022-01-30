@@ -42,3 +42,15 @@ export interface Period {
   hostBonus: boolean;
   visitorBonus: boolean;
 }
+
+export interface FoulType {
+  name: 'P' | 'P1' | 'P2' | 'P3' | 'U' | 'T' | 'B' | 'B2' | 'C' | 'GD' | 'F';
+}
+
+export interface PlayerErrorType {
+  name: 'Bad Pass' | 'Travel' | 'Double Dribble' | 'Offensive Foul' | '3 Second Violation' | '5 Second Violation' | '8 second Violation' | 'Back Field Violation';
+}
+
+// export interface Timeout {
+//   name: 'T1' | 'T2' | 'T3' | 'T4' | 'T5';
+// }
