@@ -12,8 +12,9 @@ import { PeriodsComponent } from './periods/periods.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatIconModule } from '@angular/material/icon';
+import { SharedModule } from './shared/shared.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    SharedModule,
     ToastrModule.forRoot(),
     HttpClientModule,
     TranslateModule.forRoot({
@@ -36,8 +38,7 @@ import { MatIconModule } from '@angular/material/icon';
         deps: [HttpClient]
       }
     }),
-    MatIconModule
-    // FontAwesomeModule
+    // MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

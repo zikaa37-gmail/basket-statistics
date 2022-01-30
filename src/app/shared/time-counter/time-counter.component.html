@@ -1,0 +1,29 @@
+<div class="flex flex-column">
+  <button
+    class="small-btn btn-green"
+    (click)="startTimer()"
+  >
+    <i class="fa fa-play"></i>
+    <!-- <i class="material-icons">visibility</i> -->
+  </button>
+  <button
+    class="small-btn btn-red"
+    (click)="togglePauseTimer()"
+  >
+    <i
+      class="fa fa-pause"
+      *ngIf="!timerPaused"
+    ></i>
+    <i
+      class="fa fa-random"
+      *ngIf="timerPaused"
+    ></i>
+  </button>
+  <button
+    class="small-btn btn-blue"
+    (click)="resetCounter()"
+  ><i class="fa fa-refresh"></i></button>
+</div>
+<div class="timer">
+  <b> {{minutes | number:'2.0'}} : {{seconds | number:'2.0'}}</b>
+</div>
