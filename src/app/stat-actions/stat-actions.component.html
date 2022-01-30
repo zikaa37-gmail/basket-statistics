@@ -3,16 +3,16 @@
     <div class="d-block">1</div>
     <div class="d-block">
       <button
-        class="btn btn-green"
-        (click)="prepareAction('1',1)"
+        class="btn btn-success"
+        (click)="prepareAction($event,'1',1)"
         (contextmenu)="$event.preventDefault()"
         [disabled]="!isSquadSet"
       >+</button>
     </div>
     <div class="d-block">
       <button
-        class="btn btn-red mt-2 px-3"
-        (click)="prepareAction('1',-1)"
+        class="btn btn-danger mt-2 px-3"
+        (click)="prepareAction($event,'1',-1)"
         (contextmenu)="$event.preventDefault()"
         [disabled]="!isSquadSet"
       >-</button>
@@ -24,16 +24,16 @@
     <div class="d-block">Z</div>
     <div class="d-block">
       <button
-        class="btn btn-green"
-        (click)="prepareAction('Z',1)"
+        class="btn btn-success"
+        (click)="prepareAction($event,'Z',1)"
         (contextmenu)="$event.preventDefault()"
         [disabled]="!isSquadSet"
       >+</button>
     </div>
     <div class="d-block">
       <button
-        class="btn btn-red mt-2 px-3"
-        (click)="prepareAction('Z',-1)"
+        class="btn btn-danger mt-2 px-3"
+        (click)="prepareAction($event,'Z',-1)"
         (contextmenu)="$event.preventDefault()"
         [disabled]="!isSquadSet"
       >-</button>
@@ -43,16 +43,16 @@
     <div class="d-block">2</div>
     <div class="d-block">
       <button
-        class="btn btn-green"
-        (click)="prepareAction('2',1)"
+        class="btn btn-success"
+        (click)="prepareAction($event,'2',1)"
         (contextmenu)="$event.preventDefault()"
         [disabled]="!isSquadSet"
       >+</button>
     </div>
     <div class="d-block">
       <button
-        class="btn btn-red mt-2 px-3"
-        (click)="prepareAction('2',-1)"
+        class="btn btn-danger mt-2 px-3"
+        (click)="prepareAction($event,'2',-1)"
         (contextmenu)="$event.preventDefault()"
         [disabled]="!isSquadSet"
       >-</button>
@@ -62,16 +62,16 @@
     <div class="d-block">3</div>
     <div class="d-block">
       <button
-        class="btn btn-green"
-        (click)="prepareAction('3',1)"
+        class="btn btn-success"
+        (click)="prepareAction($event,'3',1)"
         (contextmenu)="$event.preventDefault()"
         [disabled]="!isSquadSet"
       >+</button>
     </div>
     <div class="d-block">
       <button
-        class="btn btn-red mt-2 px-3"
-        (click)="prepareAction('3',-1)"
+        class="btn btn-danger mt-2 px-3"
+        (click)="prepareAction($event,'3',-1)"
         (contextmenu)="$event.preventDefault()"
         [disabled]="!isSquadSet"
       >-</button>
@@ -83,16 +83,16 @@
     <div class="d-block">F-</div>
     <div class="d-block">
       <button
-        class="btn btn-green"
-        (click)="prepareAction('F-',1)"
+        class="btn btn-success"
+        (click)="prepareAction($event,'F-',1)"
         (contextmenu)="$event.preventDefault()"
         [disabled]="!isSquadSet"
       >+</button>
     </div>
     <div class="d-block">
       <button
-        class="btn btn-red mt-2 px-3"
-        (click)="prepareAction('F-',-1)"
+        class="btn btn-danger mt-2 px-3"
+        (click)="prepareAction($event,'F-',-1)"
         (contextmenu)="$event.preventDefault()"
         [disabled]="!isSquadSet"
       >-</button>
@@ -104,16 +104,16 @@
     <div class="d-block">F+</div>
     <div class="d-block">
       <button
-        class="btn btn-green"
-        (click)="prepareAction('F+',1)"
+        class="btn btn-success"
+        (click)="prepareAction($event,'F+',1)"
         (contextmenu)="$event.preventDefault()"
         [disabled]="!isSquadSet"
       >+</button>
     </div>
     <div class="d-block">
       <button
-        class="btn btn-red mt-2 px-3"
-        (click)="prepareAction('F+',-1)"
+        class="btn btn-danger mt-2 px-3"
+        (click)="prepareAction($event,'F+',-1)"
         (contextmenu)="$event.preventDefault()"
         [disabled]="!isSquadSet"
       >-</button>
@@ -123,16 +123,16 @@
     <div class="d-block">OL</div>
     <div class="d-block">
       <button
-        class="btn btn-green"
-        (click)="prepareAction('OL',1)"
+        class="btn btn-success"
+        (click)="prepareAction($event,'OL',1)"
         (contextmenu)="$event.preventDefault()"
         [disabled]="!isSquadSet"
       >+</button>
     </div>
     <div class="d-block">
       <button
-        class="btn btn-red mt-2 px-3"
-        (click)="prepareAction('OL',-1)"
+        class="btn btn-danger mt-2 px-3"
+        (click)="prepareAction($event,'OL',-1)"
         (contextmenu)="$event.preventDefault()"
         [disabled]="!isSquadSet"
       >-</button>
@@ -142,16 +142,16 @@
     <div class="d-block">IL</div>
     <div class="d-block">
       <button
-        class="btn btn-green"
-        (click)="prepareAction('IL',1)"
+        class="btn btn-success"
+        (click)="prepareAction($event,'IL',1)"
         (contextmenu)="$event.preventDefault()"
         [disabled]="!isSquadSet"
       >+</button>
     </div>
     <div class="d-block">
       <button
-        class="btn btn-red mt-2 px-3"
-        (click)="prepareAction('IL',-1)"
+        class="btn btn-danger mt-2 px-3"
+        (click)="prepareAction($event,'IL',-1)"
         (contextmenu)="$event.preventDefault()"
         [disabled]="!isSquadSet"
       >-</button>
@@ -161,16 +161,16 @@
     <div class="d-block">AS</div>
     <div class="d-block">
       <button
-        class="btn btn-green"
-        (click)="prepareAction('AS',1)"
+        class="btn btn-success"
+        (click)="prepareAction($event,'AS',1)"
         (contextmenu)="$event.preventDefault()"
         [disabled]="!isSquadSet"
       >+</button>
     </div>
     <div class="d-block">
       <button
-        class="btn btn-red mt-2 px-3"
-        (click)="prepareAction('AS',-1)"
+        class="btn btn-danger mt-2 px-3"
+        (click)="prepareAction($event,'AS',-1)"
         (contextmenu)="$event.preventDefault()"
         [disabled]="!isSquadSet"
       >-</button>
@@ -180,16 +180,16 @@
     <div class="d-block">BL</div>
     <div class="d-block">
       <button
-        class="btn btn-green"
-        (click)="prepareAction('BL',1)"
+        class="btn btn-success"
+        (click)="prepareAction($event,'BL',1)"
         (contextmenu)="$event.preventDefault()"
         [disabled]="!isSquadSet"
       >+</button>
     </div>
     <div class="d-block">
       <button
-        class="btn btn-red mt-2 px-3"
-        (click)="prepareAction('BL',-1)"
+        class="btn btn-danger mt-2 px-3"
+        (click)="prepareAction($event,'BL',-1)"
         (contextmenu)="$event.preventDefault()"
         [disabled]="!isSquadSet"
       >-</button>
@@ -199,16 +199,16 @@
     <div class="d-block">SO</div>
     <div class="d-block">
       <button
-        class="btn btn-green"
-        (click)="prepareAction('SO',1)"
+        class="btn btn-success"
+        (click)="prepareAction($event,'SO',1)"
         (contextmenu)="$event.preventDefault()"
         [disabled]="!isSquadSet"
       >+</button>
     </div>
     <div class="d-block">
       <button
-        class="btn btn-red mt-2 px-3"
-        (click)="prepareAction('SO',-1)"
+        class="btn btn-danger mt-2 px-3"
+        (click)="prepareAction($event,'SO',-1)"
         (contextmenu)="$event.preventDefault()"
         [disabled]="!isSquadSet"
       >-</button>
@@ -218,16 +218,16 @@
     <div class="d-block">SN</div>
     <div class="d-block">
       <button
-        class="btn btn-green"
-        (click)="prepareAction('SN',1)"
+        class="btn btn-success"
+        (click)="prepareAction($event,'SN',1)"
         (contextmenu)="$event.preventDefault()"
         [disabled]="!isSquadSet"
       >+</button>
     </div>
     <div class="d-block">
       <button
-        class="btn btn-red mt-2 px-3"
-        (click)="prepareAction('SN',-1)"
+        class="btn btn-danger mt-2 px-3"
+        (click)="prepareAction($event,'SN',-1)"
         (contextmenu)="$event.preventDefault()"
         [disabled]="!isSquadSet"
       >-</button>
@@ -242,3 +242,4 @@
   (eventCancelled)="resetBg()"
   (selectedPlayer)="setSelectedPlayer($event)"
 ></app-players-popup>
+p>

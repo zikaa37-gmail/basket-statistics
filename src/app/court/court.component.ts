@@ -11,11 +11,11 @@ export class CourtComponent {
   @Input() isSquadSet!: boolean;
   @Input() currentPlayers!: Player[];
   @Output() courtAction = new EventEmitter<CourtAction>();
-  @ViewChild('threePoint') threePoint!: ElementRef;
-  @ViewChild('twoPoint') twoPoint!: ElementRef;
-  @ViewChild('twoPointCircle') twoPointCircle!: ElementRef;
-  @ViewChild('paint') paint!: ElementRef;
-  @ViewChild('onePoint') onePoint!: ElementRef;
+  @ViewChild('threePoint', { static: false }) threePoint!: ElementRef;
+  @ViewChild('twoPoint', { static: false }) twoPoint!: ElementRef;
+  @ViewChild('twoPointCircle', { static: false }) twoPointCircle!: ElementRef;
+  @ViewChild('paint', { static: false }) paint!: ElementRef;
+  @ViewChild('onePoint', { static: false }) onePoint!: ElementRef;
   selectedPosition!: string;
   displayPopup = false;
   action!: CourtAction;
@@ -42,7 +42,9 @@ export class CourtComponent {
 
   prepareAction(event: any, position: '1' | 'Z' | '2' | '2p' | '3', scored: boolean) {
     this.selectedPosition = position;
-    // console.log(event);
+    document.documentElement.style.setProperty('--mouse-x', (event.clientX + 'px'));
+    document.documentElement.style.setProperty('--mouse-y', (event.clientY + 'px'));
+
     this.markShootingArea();
     this.action = {
       position: position,
@@ -50,8 +52,8 @@ export class CourtComponent {
       xPosition: event.clientX,
       yPosition: event.clientY
     }
-    this.xPosition = event.clientX;// + 'px';
-    this.yPosition = event.clientY;// + 'px';
+    // this.xPosition = event.clientX;// + 'px';
+    // this.yPosition = event.clientY;// + 'px';
     // console.log('x:', this.xPosition);
     // console.log('y:', this.yPosition);
     this.displayPopup = true;
