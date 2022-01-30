@@ -23,11 +23,13 @@ export class StatActionsComponent implements OnChanges {
     }
   }
 
-  prepareAction(type: '1' | 'Z' | '2' | '3' | 'F-' | 'F+' | 'OL' | 'IL' | 'AS' | 'BL' | 'SO' | 'SN', value: number) {
+  prepareAction(event: any, type: '1' | 'Z' | '2' | '3' | 'F-' | 'F+' | 'OL' | 'IL' | 'AS' | 'BL' | 'SO' | 'SN', value: number) {
     this.action = {
       type: type,
       value: value
     }
+    document.documentElement.style.setProperty('--mouse-x', (event.clientX + 'px'));
+    document.documentElement.style.setProperty('--mouse-y', (event.clientY - 100 + 'px'));
     this.displayPopup = true;
   }
 
