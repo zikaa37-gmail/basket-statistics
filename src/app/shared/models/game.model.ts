@@ -33,3 +33,12 @@ export class QuarterStat {
     this.period = period;
   }
 }
+
+
+export interface Period {
+  name: number;
+  displayName: string
+  selected: boolean;
+  hostBonus: boolean;
+  visitorBonus: boolean;
+}

@@ -20,8 +20,6 @@ export class CourtComponent {
   displayPopup = false;
   action!: CourtAction;
   langs: string[];
-  xPosition = 0;
-  yPosition = 0;
 
   constructor(
     public translate: TranslateService

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Period } from './periods.component';
+import { Period } from '../shared/models/game.model';
 
 @Injectable({
   providedIn: 'root'

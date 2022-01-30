@@ -1,7 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AppService } from './app.service';
-import { Period } from './periods/periods.component';
-import { GameResult, QuarterStat } from './shared/models/game.model';
+import { GameResult, Period, QuarterStat } from './shared/models/game.model';
 import { CourtAction, Player, PointMarks } from './shared/models/shared.model';
 import { StatAction } from './stat-actions/stat-actions.component';
 

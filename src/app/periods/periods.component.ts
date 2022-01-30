@@ -1,8 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { GameResult } from '../shared/models/game.model';
+import { GameResult, Period } from '../shared/models/game.model';
 import { PeriodsService } from './periods.service';
-// import { StatAction } from '../stat-actions/stat-actions.component';
-// import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-periods',
   templateUrl: './periods.component.html',
@@ -87,10 +86,3 @@ export class PeriodsComponent implements OnInit {
   }
 }
 
-export interface Period {
-  name: number;
-  displayName: string
-  selected: boolean;
-  hostBonus: boolean;
-  visitorBonus: boolean;
-}
